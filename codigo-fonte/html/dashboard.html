@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/codigo-fonte/css/dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="/imagens/logo.1.png" alt="Logo">
+        </div>
+        <nav class="nav">
+            <a href="/codigo-fonte/html/dashboard.html">início</a>
+            <a href="sobre.html">sobre o projeto</a>
+            <a href="como.html">como funciona?</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <section class="welcome">
+            <h1 id="welcomeMessage">bem-vindo(a), visitante!</h1>
+            <p>explore novas possibilidades e personalize sua jornada cultural.</p>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <h3>favoritos</h3>
+                <p>acesse rapidamente seus locais salvos.</p>
+                <button onclick="window.location.href='favorites.html'">ver favoritos</button>
+            </div>
+            <div class="card">
+                <h3>explorar mais</h3>
+                <p>descubra novos destinos e experiências culturais.</p>
+                <button onclick="window.location.href='explore.html'">explorar</button>
+            </div>
+            <div class="card">
+                <h3>curiosidades culturais</h3>
+                <p>fique por dentro de curiosidades sobre lugares ao redor do mundo.</p>
+                <button onclick="window.location.href='curiosidades.html'">descubra</button>
+            </div>
+        </section>
+
+        <section class="highlights">
+            <h2>destaques de Hoje</h2>
+            <div class="highlight-list">
+                <div class="highlight-item">
+                    <img src="/imagens/louvre.png" alt="Destaque 1">
+                    <h3>louvre</h3>
+                    <p>explore a grandiosidade do maior museu do mundo.</p>
+                </div>
+                <div class="highlight-item">
+                    <img src="/imagens/coloseu.png" alt="Destaque 2">
+                    <h3>coliseu</h3>
+                    <p>reviva a história do Império Romano em sua plenitude.</p>
+                </div>
+                <div class="highlight-item">
+                    <img src="/imagens/carnaval.png" alt="Destaque 3">
+                    <h3>carnaval do Rio</h3>
+                    <p>sinta a energia e a alegria da maior festa brasileira.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>contato</h3>
+                <p>email: suporte@tourvirtual.com</p>
+                <p>telefone: (00) 1234-5678</p>
+            </div>
+            <div>
+                <h3>redes sociais</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="/imagens/linkedin.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="/imagens/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="/imagens/twitter.png" alt="Twitter"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 | Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="/codigo-fonte/js/script.js"></script>
+    <script src="/codigo-fonte/js/dashboard.js"></script>
+</body>
+</html>

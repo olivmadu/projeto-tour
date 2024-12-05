@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta</title>
+    <link rel="stylesheet" href="/codigo-fonte/css/cadastro.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="/imagens/logo.1.png" alt="">
+        </div>
+        <nav class="nav">
+            <a href="/codigo-fonte/index.html">início</a>
+            <a href="sobre.html">sobre o projeto</a>
+            <a href="como.html">como funciona?</a>
+        </nav>
+    </header>
+    <div class="register-container">
+        <div class="register-box">
+            <h2>crie sua conta</h2>
+            <p>preencha os campos abaixo para se registrar.</p>
+            <form id="registerForm">
+                <label for="name">nome completo</label>
+                <input type="text" id="name" placeholder="Seu nome" required>
+                
+                <label for="email">email</label>
+                <input type="email" id="email" placeholder="Seu email" required>
+                
+                <label for="password">senha</label>
+                <input type="password" id="password" placeholder="Sua senha" required>
+                
+                <label for="confirm-password">confirme sua senha</label>
+                <input type="password" id="confirm-password" placeholder="Confirme sua senha" required>
+                
+                <button type="submit" class="btn-primary">registrar</button>
+            </form>
+            <p id="message"></p>
+            <p>já tem uma conta? <a href="login.html" class="switch-to-login">faça login</a>.</p>
+        </div>
+    </div>
+    <script src="/codigo-fonte/js/cadastro.js"></script>
+</body>
+</html>

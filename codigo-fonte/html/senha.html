@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha</title>
+    <link rel="stylesheet" href="/codigo-fonte/css/senha.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="/imagens/logo.1.png" alt="Logo">
+        </div>
+        <nav class="nav">
+            <a href="/codigo-fonte/index.html">início</a>
+            <a href="sobre.html">sobre o projeto</a>
+            <a href="como.html">como funciona?</a>
+        </nav>
+    </header>
+
+    <main class="reset-container">
+        <div class="reset-box">
+            <h2>recuperar senha</h2>
+            <p>insira o e-mail associado à sua conta para redefinir a senha.</p>
+            <form id="form_recSenha">
+                <label for="email">e-mail</label>
+                <input type="email" id="rec_email" placeholder="Seu e-mail" required>
+                <button type="submit" class="btn-primary">enviar</button>
+            </form>
+        </div>
+    </main>
+
+    <div class="modal fade" id="div_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">redefinir senha</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form_redefinirSenha">
+                        <label for="novaSenha">nova senha</label>
+                        <input type="password" id="novaSenha" placeholder="Digite sua nova senha" required>
+                        <label for="confirmarSenha">confirmar nova senha</label>
+                        <input type="password" id="confirmarNovaSenha" placeholder="Confirme sua nova senha" required>
+                        <button type="submit" class="btn-primary">redefinir</button>
+                        <button type="button" class="btn-secondary" id="cancelarOperacao">cancelar</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>Contato</h3>
+                <p>E-mail: suporte@tourvirtual.com</p>
+                <p>Telefone: (00) 1234-5678</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 | Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script src="/codigo-fonte/js/senha.js"></script>
+</body>
+</html>

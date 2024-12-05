@@ -1,0 +1,210 @@
+:root {
+    --cor01: #F8EFE3; /* Fundo principal */
+    --cor02: #BFAE8E; /* Destaques */
+    --cor03: #D9CDBF; /* Cartões */
+    --cor04: #402F2B; /* Títulos */
+    --cor05: #73635F; /* Texto secundário */
+    --cor06: #0D0D0D; /* Texto principal */
+}
+
+/* RESET E CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor01);
+    color: var(--cor06);
+    line-height: 1.6;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--cor04);
+    color: var(--cor01);
+}
+
+.header img {
+    width: 100px;
+    }
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--cor01);
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav a:hover, .nav .active {
+    color: var(--cor02);
+}
+
+.nav .btn-cta {
+    background-color: var(--cor01);
+    color: var(--cor04);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav .btn-cta:hover {
+    background-color: var(--cor06);
+    color: var(--cor01);
+    transform: scale(1.1);
+}
+
+/* COMO FUNCIONA */
+.how-it-works .intro {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--cor03);
+    color: var(--cor06);
+}
+
+.how-it-works .intro h1 {
+    font-size: 36px;
+    color: var(--cor04);
+    margin-bottom: 20px;
+}
+
+.how-it-works .intro p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ETAPAS */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    background-color: var(--cor01);
+}
+
+.step-card {
+    background-color: var(--cor03);
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    position: relative;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.step-card .step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cor02);
+    color: var(--cor01);
+    font-size: 20px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.step-card h3 {
+    font-size: 20px;
+    color: var(--cor06);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.step-card p {
+    font-size: 16px;
+    color: var(--cor05);
+    line-height: 1.4;
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--cor04);
+    color: var(--cor01);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-content div {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--cor02);
+}
+
+.footer-content p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--cor03);
+    padding-top: 10px;
+    font-size: 14px;
+    color: var(--cor03);
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,150 @@
+:root {
+    --cor01: #F8EFE3;
+    --cor02: #BFAE8E;
+    --cor03: #D9CDBF;
+    --cor04: #402F2B;
+    --cor05: #73635F;
+    --cor06: #0D0D0D;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor01);
+    color: var(--cor06);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--cor04);
+    color: var(--cor01);
+    width: 100%; /* Garante que o menu ocupe toda a largura */
+    position: fixed; /* Fixa o menu no topo da página */
+    top: 0; /* Garante que ele fique no topo */
+    z-index: 1000; /* Mantém o menu acima de outros elementos */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
+}
+
+.header img {
+    width: 100px;
+    }
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre os links */
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--cor01);
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--cor02);
+    transform: translateY(-3px);
+}
+
+.nav .btn-cta {
+    background-color: var(--cor01);
+    color: var(--cor04);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav .btn-cta:hover {
+    background-color: var(--cor06);
+    transform: scale(1.1);
+}
+
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.register-box {
+    background-color: var(--cor04);
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.register-box h2 {
+    font-size: 24px;
+    color: var(--cor03);
+    margin-bottom: 10px;
+}
+
+.register-box p {
+    font-size: 14px;
+    color: var(--cor03);
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    text-align: left;
+    font-size: 14px;
+    color: var(--cor04);
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid var(--cor04);
+    border-radius: 5px;
+    font-size: 14px;
+    color: var(--cor06);
+    background-color: var(--cor01);
+}
+
+form input:focus {
+    border-color: var(--cor02);
+    outline: none;
+}
+
+form button {
+    padding: 10px;
+    background-color: var(--cor03);
+    color: var(--cor06);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--cor05);
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor03);
+    font-size: 14px;
+    transition: color 0.3s ease;
+    
+}
+
+a:hover {
+    color: var(--cor02);
+}

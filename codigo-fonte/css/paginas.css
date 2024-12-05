@@ -1,0 +1,233 @@
+:root {
+    --cor01: #F8EFE3; /* Background principal */
+    --cor02: #BFAE8E; /* Botões e destaques */
+    --cor03: #D9CDBF; /* Fundo de cartões */
+    --cor04: #402F2B; /* Cabeçalho, rodapé e bordas */
+    --cor05: #73635F; /* Texto secundário */
+    --cor06: #0D0D0D; /* Texto principal */
+}
+
+/* RESET E CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cor01);
+    color: var(--cor06);
+    line-height: 1.6;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--cor04);
+    color: var(--cor01);
+    transition: background-color 0.3s ease;
+}
+
+.header img {
+    width: 100px;
+    }
+
+.nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: var(--cor01);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--cor02);
+    transform: translateY(-3px);
+    text-decoration: underline;
+}
+
+.nav .btn-cta {
+    background-color: var(--cor01);
+    color: var(--cor04);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav .btn-cta:hover {
+    background-color: var(--cor06);
+    transform: scale(1.1);
+}
+
+/* CATEGORIAS */
+.category-title {
+    text-align: center;
+    font-size: 36px;
+    color: var(--cor06);
+    margin-top: 120px; /* Para compensar o menu fixo */
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid var(--cor03);
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: var(--cor02);
+    color: var(--cor06);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: var(--cor04);
+    color: var(--cor01);
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: var(--cor03);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: var(--cor06);
+    margin: 15px;
+    text-align: center;
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--cor06);
+    margin: 10px 15px;
+    text-align: center;
+}
+
+.card .btn-more {
+    display: block;
+    margin: 10px auto 20px;
+    padding: 10px 20px;
+    background-color: var(--cor04);
+    color: var(--cor01);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.card .btn-more:hover {
+    background-color: var(--cor06);
+    color: var(--cor02);
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--cor04);
+    color: var(--cor01);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-content div {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-content h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--cor02);
+}
+
+.footer-content p {
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--cor03);
+    padding-top: 10px;
+    font-size: 14px;
+    color: var(--cor03);
+}
