@@ -1,77 +1,94 @@
-// Captura o formulário de recuperação de senha e a mensagem
+// ------------------------- Seletores e Elementos ------------------------- //
 const resetForm = document.getElementById('form_recSenha');
 const resetMessage = document.createElement('p');
-resetForm.parentElement.appendChild(resetMessage); 
+resetForm.parentElement.appendChild(resetMessage);
 
-// Função para encontrar o usuário pelo e-mail
-function findUserByEmail(email) {
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    return users.find(user => user.email === email); 
+const modal = document.getElementById('div_modal');
+const redefineForm = document.getElementById('form_redefinirSenha');
+const cancelButton = document.getElementById('cancelarOperacao');
+
+// ------------------------- Funções Auxiliares ------------------------- //
+
+/**
+ * Obtém a lista de usuários do localStorage.
+ * @returns {Array} Lista de usuários cadastrados.
+ */
+function getUsers() {
+    return JSON.parse(localStorage.getItem('users')) || [];
 }
 
-// Evento de submissão do formulário de recuperação
+/**
+ * Salva a lista de usuários no localStorage.
+ * @param {Array} users - Lista atualizada de usuários.
+ */
+function saveUsers(users) {
+    localStorage.setItem('users', JSON.stringify(users));
+}
+
+/**
+ * Busca um usuário pelo e-mail.
+ * @param {string} email - E-mail do usuário.
+ * @returns {Object|undefined} O usuário encontrado ou undefined caso não exista.
+ */
+function findUserByEmail(email) {
+    const users = getUsers();
+    return users.find(user => user.email === email);
+}
+
+/**
+ * Exibe uma mensagem de feedback ao usuário.
+ * @param {string} text - Texto da mensagem.
+ * @param {string} color - Cor da mensagem (ex: 'green', 'red').
+ */
+function showMessage(text, color) {
+    resetMessage.textContent = text;
+    resetMessage.style.color = color;
+}
+
+// ------------------------- Evento de Recuperação de Senha ------------------------- //
+
 resetForm.addEventListener('submit', (event) => {
     event.preventDefault(); 
 
-    // Captura o e-mail digitado no formulário
     const email = document.getElementById('rec_email').value.trim();
-
-    // Busca o usuário pelo e-mail
     const user = findUserByEmail(email);
 
     if (user) {
-        resetMessage.textContent = 'Usuário encontrado! Agora você pode redefinir sua senha.';
-        resetMessage.style.color = 'green';
-
-        // Exibe o modal para redefinição
-        const modal = document.getElementById('div_modal');
+        showMessage('Usuário encontrado! Agora você pode redefinir sua senha.', 'green');
         modal.style.display = 'block'; 
     } else {
-        resetMessage.textContent = 'E-mail não encontrado. Verifique e tente novamente.';
-        resetMessage.style.color = 'red';
+        showMessage('E-mail não encontrado. Verifique e tente novamente.', 'red');
     }
 });
 
-// Captura o formulário de redefinição de senha
-const redefineForm = document.getElementById('form_redefinirSenha');
+// ------------------------- Evento de Redefinição de Senha ------------------------- //
 
-// Evento de redefinição de senha
 redefineForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    // Captura as novas senhas
     const newPassword = document.getElementById('novaSenha').value.trim();
     const confirmPassword = document.getElementById('confirmarNovaSenha').value.trim();
+    const email = document.getElementById('rec_email').value.trim();
 
     if (newPassword !== confirmPassword) {
         alert('As senhas não coincidem. Tente novamente.');
         return;
     }
 
-    // Recupera o e-mail do formulário de recuperação
-    const email = document.getElementById('rec_email').value.trim();
+    // Atualiza a senha do usuário no localStorage
+    const users = getUsers();
+    const updatedUsers = users.map(user => 
+        user.email === email ? { ...user, password: newPassword } : user
+    );
 
-    // Atualiza a senha no localStorage
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const updatedUsers = users.map(user => {
-        if (user.email === email) {
-            return { ...user, password: newPassword }; 
-        }
-        return user;
-    });
-
-    // Salva os usuários atualizados no localStorage
-    localStorage.setItem('users', JSON.stringify(updatedUsers));
+    saveUsers(updatedUsers);
 
     alert('Senha redefinida com sucesso!');
-    window.location.href = 'login.html'; 
+    window.location.href = 'login.html';
 });
 
-// Captura o botão "Cancelar"
-const cancelButton = document.getElementById('cancelarOperacao');
+// ------------------------- Evento de Cancelamento ------------------------- //
 
-// Adiciona o evento de clique para fechar o modal
 cancelButton.addEventListener('click', () => {
-    const modal = document.getElementById('div_modal');
-    modal.style.display = 'none'; // Esconde o modal
+    modal.style.display = 'none';
 });

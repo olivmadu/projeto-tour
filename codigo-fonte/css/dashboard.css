@@ -1,10 +1,10 @@
 :root {
-    --cor01: #F8EFE3; /* Fundo principal */
-    --cor02: #BFAE8E; /* Botões e destaques */
-    --cor03: #D9CDBF; /* Fundo de cartões */
-    --cor04: #402F2B; /* Cabeçalho e rodapé */
-    --cor05: #73635F; /* Texto secundário */
-    --cor06: #0D0D0D; /* Texto principal */
+    --cor01: #F8EFE3; 
+    --cor02: #BFAE8E; 
+    --cor03: #D9CDBF; 
+    --cor04: #402F2B; 
+    --cor05: #73635F; 
+    --cor06: #0D0D0D; 
 }
 
 body {
@@ -59,7 +59,7 @@ body {
 
 .header img {
     width: 100px;
-    }
+}
 
 /* DASHBOARD */
 .dashboard {

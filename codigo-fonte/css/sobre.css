@@ -1,10 +1,10 @@
 :root {
-    --cor01: #F8EFE3; /* Fundo principal */
-    --cor02: #BFAE8E; /* Destaques */
-    --cor03: #D9CDBF; /* Cartões */
-    --cor04: #402F2B; /* Títulos */
-    --cor05: #73635F; /* Texto secundário */
-    --cor06: #0D0D0D; /* Texto principal */
+    --cor01: #F8EFE3; 
+    --cor02: #BFAE8E; 
+    --cor03: #D9CDBF; 
+    --cor04: #402F2B; 
+    --cor05: #73635F; 
+    --cor06: #0D0D0D; 
 }
 
 /* RESET E CONFIGURAÇÕES GERAIS */
@@ -33,7 +33,7 @@ body {
 
 .header img {
     width: 100px;
-    }
+}
 
 .nav a {
     margin: 0 15px;
@@ -43,7 +43,8 @@ body {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav a:hover, .nav .active {
+.nav a:hover,
+.nav .active {
     color: var(--cor02);
 }
 
@@ -85,9 +86,8 @@ body {
     background-color: var(--cor02);
     padding: 20px;
     border-radius: 5px;
-    text-align:start;
+    text-align: start;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
 
 .about-page :hover {
@@ -207,3 +207,4 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+

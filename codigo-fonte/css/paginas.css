@@ -1,10 +1,10 @@
 :root {
-    --cor01: #F8EFE3; /* Background principal */
-    --cor02: #BFAE8E; /* Botões e destaques */
-    --cor03: #D9CDBF; /* Fundo de cartões */
-    --cor04: #402F2B; /* Cabeçalho, rodapé e bordas */
-    --cor05: #73635F; /* Texto secundário */
-    --cor06: #0D0D0D; /* Texto principal */
+    --cor01: #F8EFE3; 
+    --cor02: #BFAE8E; 
+    --cor03: #D9CDBF; 
+    --cor04: #402F2B; 
+    --cor05: #73635F; 
+    --cor06: #0D0D0D; 
 }
 
 /* RESET E CONFIGURAÇÕES GERAIS */
@@ -45,7 +45,7 @@ body {
 
 .header img {
     width: 100px;
-    }
+}
 
 .nav a {
     margin: 0 15px;
@@ -80,7 +80,7 @@ body {
     text-align: center;
     font-size: 36px;
     color: var(--cor06);
-    margin-top: 120px; /* Para compensar o menu fixo */
+    margin-top: 120px; 
     margin-bottom: 20px;
 }
 

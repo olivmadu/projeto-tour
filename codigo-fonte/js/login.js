@@ -1,38 +1,59 @@
-// Captura o formulário e elementos do login
+// ------------------------- Seleção de Elementos ------------------------- //
 const loginForm = document.getElementById('loginForm');
 const loginMessage = document.getElementById('loginMessage');
+const inputEmail = document.getElementById('loginEmail');
+const inputPassword = document.getElementById('loginPassword');
 
-// Função para verificar o login
-function validateLogin(email, password) {
-    const users = JSON.parse(localStorage.getItem('users')) || []; // Recupera os usuários registrados
-    return users.find(user => user.email === email && user.password === password); // Retorna o usuário encontrado
+// ------------------------- Funções Auxiliares ------------------------- //
+
+/**
+ * Obtém a lista de usuários do localStorage.
+ * @returns {Array} Lista de usuários cadastrados.
+ */
+function getUsers() {
+    return JSON.parse(localStorage.getItem('users')) || [];
 }
 
-// Evento de submissão do formulário
+/**
+ * Exibe uma mensagem de feedback ao usuário.
+ * @param {string} text - Texto da mensagem.
+ * @param {string} color - Cor da mensagem (ex: 'green', 'red').
+ */
+function showMessage(text, color) {
+    loginMessage.textContent = text;
+    loginMessage.style.color = color;
+}
+
+/**
+ * Valida as credenciais de login.
+ * @param {string} email - O e-mail digitado.
+ * @param {string} password - A senha digitada.
+ * @returns {Object|undefined} Retorna o objeto do usuário se válido, ou undefined se inválido.
+ */
+function validateLogin(email, password) {
+    const users = getUsers();
+    return users.find(user => user.email === email && user.password === password);
+}
+
+// ------------------------- Lógica de Login ------------------------- //
 loginForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    // Captura os valores do formulário
-    const email = document.getElementById('loginEmail').value.trim();
-    const password = document.getElementById('loginPassword').value.trim();
+    const email = inputEmail.value.trim();
+    const password = inputPassword.value.trim();
 
-    // Valida o login
     const user = validateLogin(email, password);
 
     if (user) {
-        loginMessage.textContent = 'Login realizado com sucesso!';
-        loginMessage.style.color = 'green';
-
-        // Salva o nome do usuário logado no localStorage
+        showMessage('Login realizado com sucesso!', 'green');
         localStorage.setItem('loggedInUser', JSON.stringify(user));
 
-        // Redireciona para o dashboard após 2 segundos
         setTimeout(() => {
             window.location.href = 'dashboard.html';
         }, 2000);
     } else {
-        loginMessage.textContent = 'Email ou senha inválidos.';
-        loginMessage.style.color = 'red';
+        showMessage('Email ou senha inválidos.', 'red');
     }
 });
+
 
